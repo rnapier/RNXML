@@ -48,7 +48,7 @@ extension RNXMLTokenizer: XMLParserDelegate {
     }
 
     func parser(_ parser: XMLParser, foundCharacters string: String) {
-        text += string
+        text += string.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
     func parser(_ parser: XMLParser, foundCDATA CDATABlock: Data) {
